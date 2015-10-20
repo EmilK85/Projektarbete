@@ -41,7 +41,7 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.lbBooks);
             this.Name = "LibraryForm";
-            this.Text = "Library";
+            this.Text = "Hej ove";
             this.ResumeLayout(false);
 
         }
