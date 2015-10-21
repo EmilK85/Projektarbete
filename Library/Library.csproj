@@ -82,6 +82,7 @@
     <Compile Include="Models\LibraryContext.cs" />
     <Compile Include="Services\BookService.cs" />
     <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\LoanService.cs" />
     <EmbeddedResource Include="LibraryForm.resx">
       <DependentUpon>LibraryForm.cs</DependentUpon>
     </EmbeddedResource>

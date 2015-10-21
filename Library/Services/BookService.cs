@@ -6,19 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Services {
-    class BookService
+namespace Library.Services
+{
+    class BookService<T,Tid>: IService
     {
-        BookRepository _bookRepository;
+        BookRepository<T,Tid> _bookRepository;
 
         public BookService(RepositoryFactory repoFactory)
         {
             _bookRepository = repoFactory.GetBookRepository();
         }
 
+        public event EventHandler Updated;
+
         public IEnumerable<Book> All()
         {
-            return _bookRepository.All();
+            return (IEnumerable<Book>)_bookRepository.All();
         } 
     }
 }

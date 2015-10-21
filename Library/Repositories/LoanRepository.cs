@@ -7,7 +7,7 @@ using Library.Models;
 
 namespace Library.Repositories
 {
-    class LoanRepository<T, Tid> : IRepository<T, Tid>
+    public class LoanRepository<T, Tid> : IRepository<T, Tid>
     {
         LibraryContext _context;
 
