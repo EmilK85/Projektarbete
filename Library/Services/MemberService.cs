@@ -18,5 +18,10 @@ namespace Library.Services
         }
 
         public event EventHandler Updated;
+
+        public IEnumerable<Member> All()
+        {
+            return _memberRepository.All();
+        }
     }
 }

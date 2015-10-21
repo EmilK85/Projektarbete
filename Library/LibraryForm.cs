@@ -11,7 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Library {
+namespace Library
+{
     public partial class LibraryForm: Form
     {
 
@@ -19,21 +20,23 @@ namespace Library {
 
         public LibraryForm()
         {
-            InitializeComponent();
-            
+            InitializeComponent();        
             RepositoryFactory repoFactory = new RepositoryFactory();
-
             _bookService = new BookService(repoFactory);
-
             ListAllBooks();
         }
 
         private void ListAllBooks()
         {
-            foreach (Book book in _bookService.All())
-            {
-                lbBooks.Items.Add(book);
-            }
+            //foreach (Book book in _bookService.All())
+            //{
+            //    lbBooks.Items.Add(book.ToString());
+            //}
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _bookService.All();
         }
     }
 }

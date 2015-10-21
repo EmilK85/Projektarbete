@@ -14,7 +14,8 @@ namespace Library.Models {
         /// <summary>
         /// Get the db-context instance
         /// </summary>
-        public static LibraryContext GetContext() {
+        public static LibraryContext GetContext()
+        {
             if (_context == null)
                 _context = new LibraryContext();
 

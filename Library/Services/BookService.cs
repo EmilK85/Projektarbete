@@ -21,7 +21,7 @@ namespace Library.Services
 
         public IEnumerable<Book> All()
         {
-            return (IEnumerable<Book>)_bookRepository.All();
+            return _bookRepository.All();
         } 
     }
 }

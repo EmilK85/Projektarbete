@@ -33,5 +33,17 @@ namespace Library.Models
         {
             return Guid.NewGuid().ToString("N");
         }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach (Book book in BookList) 
+            {
+                builder.Append(book.Title).Append("|");
+            }
+            string result = builder.ToString();
+
+            return String.Format("[{0}] -- {1}", this.AuthorId, this.Name, result);
+        }
     }
 }

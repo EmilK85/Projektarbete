@@ -36,5 +36,12 @@ namespace Library.Models
         {
             return Guid.NewGuid().ToString("N");
         }
+
+        public override string ToString()
+        {
+            return String.Format("[{0}] -- {1} -- {2} -- {3} -- {4}", 
+                this.MemberId, this.Pnumber, this.FirstName,
+                this.LastName, this.loan.LoanId);
+        }
     }
 }

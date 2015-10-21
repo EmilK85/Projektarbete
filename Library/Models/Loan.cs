@@ -30,10 +30,20 @@ namespace Library.Models
             this.DueDate = dueDate;
             this.book = _book;
             this.member = _member;
+            this.TimeOfRetrun = "";
         }
+
         private string generateNewId()
         {
             return Guid.NewGuid().ToString("N");
+        }
+
+        public override string ToString()
+        {
+            string name = this.member.FirstName + " " + this.member.LastName;
+            return String.Format("[{0}] -- {1} -- {2} -- {3} -- {4} -- {5}", 
+                this.LoanId, this.TimeOfLoan, this.DueDate,
+                this.TimeOfRetrun, this.book.Title, name);
         }
     }
 }
