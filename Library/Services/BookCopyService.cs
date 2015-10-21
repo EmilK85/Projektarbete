@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Library.Services
 {
-    class MemberService<T,Tid> : IService
+    class BookCopyService<T, Tid> : IService
     {
-        MemberRepository<T, Tid> _memberRepository;
+        BookCopyRepository<T, Tid> _bookCopyRepository;
 
-        public MemberService(RepositoryFactory<T, Tid> repoFactory)
+        public BookCopyService(RepositoryFactory<T, Tid> repoFactory)
         {
-            _memberRepository = repoFactory.GetMemberRepository();
+            _bookCopyRepository = repoFactory.GetBookCopyRepository();
         }
 
         public event EventHandler Updated;

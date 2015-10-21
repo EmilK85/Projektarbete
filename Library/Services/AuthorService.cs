@@ -10,11 +10,11 @@ namespace Library.Services
 {
     class AuthorService<T,Tid> : IService
     {
-        AuthorRepository<T, Tid> _loanRepository;
+        AuthorRepository<T, Tid> _authorRepository;
 
         public AuthorService(RepositoryFactory<T, Tid> repoFactory)
         {
-            _loanRepository = repoFactory.GetAuthorRepository();
+            _authorRepository = repoFactory.GetAuthorRepository();
         }
 
         public event EventHandler Updated;
