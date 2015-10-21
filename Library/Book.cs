@@ -13,6 +13,7 @@ namespace Library
         public string Title { get; set; }
         public string Description { get; set; }
         public Author author { get; set; }
+        public string test;
 
         public Book()
         {
