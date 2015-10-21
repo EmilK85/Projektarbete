@@ -5,12 +5,13 @@ using System.Linq;
 using System.Web;
 using Library.Models;
 
-namespace Library.Repositories {
-    public class BookRepository<T, Tid>: IRepository<T, Tid>
+namespace Library.Repositories
+{
+    class LoanRepository<T, Tid> : IRepository<T, Tid>
     {
         LibraryContext _context;
 
-        public BookRepository(LibraryContext ctx)
+        public LoanRepository(LibraryContext ctx)
         {
             _context = ctx;
         }
@@ -21,7 +22,7 @@ namespace Library.Repositories {
 
         public IEnumerable<T> All()
         {
-            return (IEnumerable<T>)_context.Books.ToList();
+            return (IEnumerable<T>)_context.Loans.ToList();
         }
 
         public void Edit(T item)
@@ -30,11 +31,11 @@ namespace Library.Repositories {
 
         public T Find(Tid id)
         {
-            foreach(var book in _context.Books.ToList())
+            foreach (var loan in _context.Loans.ToList())
             {
-                if(book.BookId == id.ToString())
+                if (loan.LoanId == id.ToString())
                 {
-                    return (T)Convert.ChangeType(book, typeof(T));
+                    return (T)Convert.ChangeType(loan, typeof(T));
                 }
             }
 

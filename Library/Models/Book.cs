@@ -4,15 +4,42 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Library.Models {
-    public class Book {
+namespace Library.Models
+{
+    public class Book
+    {
         [Key]
-        public int Id { get; set; }
+        public string BookId { get; set; }
         [Required]
         public string Title { get; set; }
 
-        public override string ToString() {
-            return String.Format("[{0}] -- {1}", this.Id, this.Title);
+        public long IsbnNumber { get; set; }
+        public string Description { get; set; }
+        public Author author { get; set; }
+
+        public Book()
+        {
+            this.BookId = generateNewId();
         }
+
+        public Book(long isbnNumber, string title, string description, Author _author)
+        {
+            this.BookId = generateNewId();
+            this.IsbnNumber = isbnNumber;
+            this.Title = title;
+            this.Description = description;
+            this.author = _author;
+        }
+
+        private string generateNewId()
+        {
+            return Guid.NewGuid().ToString("N");
+        }
+
+        //    public override string ToString()
+        //    {
+        //        return String.Format("[{0}] -- {1}", this.BookId, this.Title, this.IsbnNumber, 
+        //            this.Description, this.author);
+        //    }
     }
 }
