@@ -12,7 +12,7 @@ namespace Library.Services
     {
         BookRepository<T,Tid> _bookRepository;
 
-        public BookService(RepositoryFactory repoFactory)
+        public BookService(RepositoryFactory<T,Tid> repoFactory)
         {
             _bookRepository = repoFactory.GetBookRepository();
         }

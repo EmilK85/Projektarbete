@@ -34,6 +34,21 @@ namespace Library.Repositories
             return new LoanRepository<T, Tid>(context);
         }
 
+        public MemberRepository<T, Tid> GetMemberRepository()
+        {
+            return new MemberRepository<T, Tid>(context);
+        }
+
+        public AuthorRepository<T, Tid> GetAuthorRepository()
+        {
+            return new AuthorRepository<T, Tid>(context);
+        }
+
+        public BookCopyRepository<T, Tid> GetBookCopyRepository()
+        {
+            return new BookCopyRepository<T, Tid>(context);
+        }
+
         // More repositories..
     }
 }

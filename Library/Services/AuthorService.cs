@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Library.Services
 {
-    class LoanService<T,Tid> : IService
+    class AuthorService<T,Tid> : IService
     {
-        LoanRepository<T, Tid> _loanRepository;
+        AuthorRepository<T, Tid> _loanRepository;
 
-        public LoanService(RepositoryFactory<T,Tid> repoFactory)
+        public AuthorService(RepositoryFactory<T, Tid> repoFactory)
         {
-            _loanRepository = repoFactory.GetLoanRepository();
+            _loanRepository = repoFactory.GetAuthorRepository();
         }
 
         public event EventHandler Updated;

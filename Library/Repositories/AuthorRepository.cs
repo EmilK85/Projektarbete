@@ -7,11 +7,11 @@ using Library.Models;
 
 namespace Library.Repositories
 {
-    public class MemberRepository<T, Tid> : IRepository<T, Tid>
+    public class AuthorRepository<T, Tid> : IRepository<T, Tid>
     {
         LibraryContext _context;
 
-        public MemberRepository(LibraryContext ctx)
+        public AuthorRepository(LibraryContext ctx)
         {
             _context = ctx;
         }
@@ -22,7 +22,7 @@ namespace Library.Repositories
 
         public IEnumerable<T> All()
         {
-            return (IEnumerable<T>)_context.Members.ToList();
+            return (IEnumerable<T>)_context.Authors.ToList();
         }
 
         public void Edit(T item)
@@ -31,11 +31,11 @@ namespace Library.Repositories
 
         public T Find(Tid id)
         {
-            foreach (var member in _context.Members.ToList())
+            foreach (var author in _context.Authors.ToList())
             {
-                if (member.MemberId == id.ToString())
+                if (author.AuthorId == id.ToString())
                 {
-                    return (T)Convert.ChangeType(member, typeof(T));
+                    return (T)Convert.ChangeType(author, typeof(T));
                 }
             }
 
@@ -43,7 +43,7 @@ namespace Library.Repositories
         }
 
         public void Remove(T item)
-        {
+        { 
         }
     }
 }

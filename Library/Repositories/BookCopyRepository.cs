@@ -7,7 +7,7 @@ using Library.Models;
 
 namespace Library.Repositories
 {
-    class BookCopyRepository<T, Tid> : IRepository<T, Tid>
+    public class BookCopyRepository<T, Tid> : IRepository<T, Tid>
     {
         LibraryContext _context;
 
