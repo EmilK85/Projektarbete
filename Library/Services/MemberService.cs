@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Library.Services
 {
-    class MemberService<T,Tid> : IService
+    class MemberService : IService
     {
-        MemberRepository<T, Tid> _memberRepository;
+        MemberRepository _memberRepository;
 
-        public MemberService(RepositoryFactory<T, Tid> repoFactory)
+        public MemberService(RepositoryFactory repoFactory)
         {
             _memberRepository = repoFactory.GetMemberRepository();
         }

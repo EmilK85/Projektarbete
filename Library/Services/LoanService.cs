@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Library.Services
 {
-    class LoanService<T,Tid> : IService
+    class LoanService : IService
     {
-        LoanRepository<T, Tid> _loanRepository;
+        LoanRepository _loanRepository;
 
-        public LoanService(RepositoryFactory<T,Tid> repoFactory)
+        public LoanService(RepositoryFactory repoFactory)
         {
             _loanRepository = repoFactory.GetLoanRepository();
         }

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Library.Services
 {
-    class AuthorService<T,Tid> : IService
+    class AuthorService: IService
     {
-        AuthorRepository<T, Tid> _authorRepository;
+        AuthorRepository _authorRepository;
 
-        public AuthorService(RepositoryFactory<T, Tid> repoFactory)
+        public AuthorService(RepositoryFactory repoFactory)
         {
             _authorRepository = repoFactory.GetAuthorRepository();
         }

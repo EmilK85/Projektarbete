@@ -7,7 +7,7 @@ using Library.Models;
 
 namespace Library.Repositories
 {
-    public class BookRepository<T, Tid>: IRepository<T, Tid>
+    public class BookRepository
     {
         LibraryContext _context;
 
@@ -16,33 +16,33 @@ namespace Library.Repositories
             _context = ctx;
         }
 
-        public void Add(T item)
+        public void Add(Book item)
         {
         }
 
-        public IEnumerable<T> All()
+        public IEnumerable<Book> All()
         {
-            return (IEnumerable<T>)_context.Books.ToList();
+            return _context.Books.ToList();
         }
 
-        public void Edit(T item)
+        public void Edit(Book item)
         {
         }
 
-        public T Find(Tid id)
+        public Book Find(string id)
         {
             foreach(var book in _context.Books.ToList())
             {
-                if(book.BookId == id.ToString())
+                if(book.BookId == id)
                 {
-                    return (T)Convert.ChangeType(book, typeof(T));
+                    return book;
                 }
             }
 
             throw new Exception();
         }
 
-        public void Remove(T item)
+        public void Remove(Book item)
         {
         }
     }

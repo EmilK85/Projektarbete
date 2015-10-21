@@ -11,7 +11,7 @@ namespace Library.Repositories
     /// <summary>
     /// This class handles instantiation of the repositories.
     /// </summary>
-    public class RepositoryFactory<T,Tid>
+    public class RepositoryFactory
     {
         /// <summary>
         /// Wrapper property to get a context instance.
@@ -24,31 +24,29 @@ namespace Library.Repositories
         /// <summary>
         /// Retrieve a book repository instance.
         /// </summary>
-        public BookRepository<T,Tid> GetBookRepository()
+        public BookRepository GetBookRepository()
         {
-            return new BookRepository<T,Tid>(context);
+            return new BookRepository(context);
         }
 
-        public LoanRepository<T, Tid> GetLoanRepository()
+        public LoanRepository GetLoanRepository()
         {
-            return new LoanRepository<T, Tid>(context);
+            return new LoanRepository(context);
         }
 
-        public MemberRepository<T, Tid> GetMemberRepository()
+        public MemberRepository GetMemberRepository()
         {
-            return new MemberRepository<T, Tid>(context);
+            return new MemberRepository(context);
         }
 
-        public AuthorRepository<T, Tid> GetAuthorRepository()
+        public AuthorRepository GetAuthorRepository()
         {
-            return new AuthorRepository<T, Tid>(context);
+            return new AuthorRepository(context);
         }
 
-        public BookCopyRepository<T, Tid> GetBookCopyRepository()
+        public BookCopyRepository GetBookCopyRepository()
         {
-            return new BookCopyRepository<T, Tid>(context);
+            return new BookCopyRepository(context);
         }
-
-        // More repositories..
     }
 }

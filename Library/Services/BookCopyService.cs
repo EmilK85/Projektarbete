@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Library.Services
 {
-    class BookCopyService<T, Tid> : IService
+    class BookCopyService : IService
     {
-        BookCopyRepository<T, Tid> _bookCopyRepository;
+        BookCopyRepository _bookCopyRepository;
 
-        public BookCopyService(RepositoryFactory<T, Tid> repoFactory)
+        public BookCopyService(RepositoryFactory repoFactory)
         {
             _bookCopyRepository = repoFactory.GetBookCopyRepository();
         }

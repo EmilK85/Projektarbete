@@ -7,7 +7,7 @@ using Library.Models;
 
 namespace Library.Repositories
 {
-    public class LoanRepository<T, Tid> : IRepository<T, Tid>
+    public class LoanRepository
     {
         LibraryContext _context;
 
@@ -16,33 +16,33 @@ namespace Library.Repositories
             _context = ctx;
         }
 
-        public void Add(T item)
+        public void Add(Loan item)
         {
         }
 
-        public IEnumerable<T> All()
+        public IEnumerable<Loan> All()
         {
-            return (IEnumerable<T>)_context.Loans.ToList();
+            return _context.Loans.ToList();
         }
 
-        public void Edit(T item)
+        public void Edit(Loan item)
         {
         }
 
-        public T Find(Tid id)
+        public Loan Find(string id)
         {
             foreach (var loan in _context.Loans.ToList())
             {
-                if (loan.LoanId == id.ToString())
+                if (loan.LoanId == id)
                 {
-                    return (T)Convert.ChangeType(loan, typeof(T));
+                    return loan;
                 }
             }
 
             throw new Exception();
         }
 
-        public void Remove(T item)
+        public void Remove(Loan item)
         {
         }
     }
